@@ -1,10 +1,18 @@
 <template>
-  <div></div>
+  <div>
+    <h1>입력 폼 UI</h1>
+    <yn-textarea v-model="text" :placeholder="placeholder" :disabled="disabled" :maxlength="maxlength" />
+    <yn-textarea v-model="text" :placeholder="placeholder" :disabled="disabled" :maxlength="maxlength" :action="true"/>
+    <yn-textarea v-model="text" :placeholder="placeholder" :disabled="true" :maxlength="maxlength" />
+  </div>
 </template>
 
 <script>
+import YnTextarea from '@/components/form/YnTextarea'
+
 export default {
   name: 'index',
+  components: { YnTextarea },
   data () {
     return {
       text: '',
