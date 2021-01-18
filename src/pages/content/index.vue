@@ -1,33 +1,26 @@
 <template>
-  <div></div>
+  <div>
+    <h1>카드 UI</h1>
+    <yn-card :type="type" :label="label" :title="title" :score="score" :description="description" />
+    <yn-card :type="type" :label="label" :title="title" :score="3" :description="description" />
+    <yn-card :type="type" :label="label" :title="title" :score="score" :description="description" />
+  </div>
 </template>
 
 <script>
+import YnCard from '@/components/form/YnCard'
+
 export default {
   name: 'Content',
+  components: { YnCard },
   data () {
     return {
-      contents: [{
-        img: 'logo.png',
-        label: 'Card Label1',
-        title: 'Card Title1',
-        description: 'Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-        score: 3
-      },
-      {
-        img: 'logo.png',
-        label: 'Card Label2',
-        title: 'Card Title2',
-        description: 'Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-        score: 2
-      },
-      {
-        img: 'logo.png',
-        label: 'Card Label3',
-        title: 'Card Title3',
-        description: 'Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-        score: 4.5
-      }]
+      type: 'vertical',
+      img: 'sample1.png',
+      label: 'Card Label1',
+      title: 'Card Title1',
+      score: 4,
+      description: 'Lorem ipsum dolor sit amet..'
     }
   }
 }
