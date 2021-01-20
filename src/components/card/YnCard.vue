@@ -1,7 +1,6 @@
 <template>
-  <div class="yn-card">
-<!--    <img :src="`@/assets/images/${img}`">-->
-    <img src="@/assets/images/sample1.png">
+  <div class="yn-card" :class="{horizontal: horizontal}">
+    <img :src="img">
     <div class="yn-card-header">
       <div class="yn-card-label">{{ label }}</div>
       <div class="yn-card-title">{{ title }}</div>
@@ -10,27 +9,21 @@
       <div class="yn-card-etc-hi">Hilight</div>
       <div class="yn-card-etc-cross">Cross Out</div>
     </div>
-    <div class="yn-card-footer">
-      <yn-score :score="score"></yn-score>
-<!--      <div class="yn-card-score">{{ score }}</div>-->
-      <div class="yn-card-desc">{{ description }}</div>
-    </div>
+    <slot />
   </div>
 </template>
 
 <script>
-import YnScore from '@/components/YnScore'
 export default {
   name: 'YnCard',
-  components: { YnScore },
   props: {
-    type: {
-      type: String,
-      default: 'vertical'
+    horizontal: {
+      type: Boolean,
+      default: false
     },
     img: {
       type: String,
-      default: 'sample3.png'
+      default: require('../../assets/images/sample2.png')
     },
     label: {
       type: String,
@@ -39,14 +32,6 @@ export default {
     title: {
       type: String,
       default: 'Card Title'
-    },
-    score: {
-      type: Number,
-      default: 5
-    },
-    description: {
-      type: String,
-      default: 'Card Description'
     }
   }
 }
@@ -54,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .yn-card {
-  display: inline-block;
+  display: inline-grid;
   float: left;
   width: 25%;
   margin: 10px;
@@ -70,7 +55,7 @@ export default {
     color: gray;
   }
   &-title {
-    float: left;
+    text-align: left;
     margin-top: 5px;
     font-size: 13px;
     font-weight: bold;
@@ -80,7 +65,6 @@ export default {
     grid-template-columns: 1fr 5fr;
     margin: 10px;
     font-size: 12px;
-    float: left;
     &-hi {
       color: red;
     }
@@ -92,16 +76,41 @@ export default {
     }
   }
   &-footer {
+    display: grid;
     border-top: 1px solid gray;
-    margin: 10px;
   }
   &-desc {
     font-size: 12px;
-    float: left;
     color: gray;
+    text-align: left;
+    margin: 0 10px 10px 10px;
   }
   img {
     width: 100%;
+  }
+  &.horizontal {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    width: 33.333%;
+    img {
+      height: 100%;
+      grid-row: 1 / 4;
+    }
+    .yn-card {
+      &-label {
+        display: none;
+      }
+      &-etc {
+        display: none;
+      }
+      &-score {
+        grid-column: 2 / 3;
+      }
+      &-desc {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
   }
 }
 @media screen and ( min-width: 0px) and ( max-width: 799px){ /* 안드로이드 , ios */
