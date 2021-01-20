@@ -1,18 +1,12 @@
 <template>
   <div class="yn-card-subtitle">
-    {{ subtitle }}
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'YnCardSubtitle',
-  props: {
-    subtitle: {
-      type: String,
-      default: 'Card Subtitle'
-    }
-  }
+  name: 'YnCardSubtitle'
 }
 </script>
 

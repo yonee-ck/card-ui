@@ -1,17 +1,17 @@
 <template>
-  <div class="yn-card-hilight">
+  <div class="yn-card-highlight">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'YnCardHilight'
+  name: 'YnCardHighlight'
 }
 </script>
 
 <style lang="scss" scoped>
-.yn-card-hilight {
+.yn-card-highlight {
   color: red;
 }
 </style>

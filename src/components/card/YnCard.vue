@@ -25,7 +25,8 @@ export default {
 .yn-card {
   display: inline-grid;
   float: left;
-  width: 25%;
+  width: 100%;
+  min-width: 200px;
   margin: 10px;
   border: 1px solid darkgray;
   border-radius: 2px;
@@ -34,18 +35,14 @@ export default {
     width: 100%;
   }
   &.horizontal {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 0.5fr 1fr 0.5fr;
-    width: 33.333%;
+    width: 100%;
+    min-width: 300px;
     img {
       height: 100%;
       grid-row: 1 / 4;
     }
-  }
-}
-@media screen and ( min-width: 0px) and ( max-width: 799px){ /* 안드로이드 , ios */
-  .yn-card {
-    width: 50%;
   }
 }
 </style>

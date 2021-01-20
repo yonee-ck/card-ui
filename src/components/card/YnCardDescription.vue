@@ -21,7 +21,7 @@ export default {
     white-space: normal;
     line-height: 1.2;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
   }
   &.horizontal {
@@ -29,6 +29,7 @@ export default {
       &-desc {
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+        -webkit-line-clamp: 3;
       }
     }
   }
