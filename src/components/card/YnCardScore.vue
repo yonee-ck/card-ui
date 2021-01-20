@@ -6,7 +6,9 @@
     <div v-for="el in emptyScore" :key="el.index" class="yn-card-score-inner">
       <img src="@/assets/images/score_empty.png">
     </div>
-    <slot />
+    <div class="yn-card-score-description">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -31,13 +33,19 @@ export default {
 .yn-card-score {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  margin: 10px;
   &-inner {
     width: 25px;
     img {
       display: block;
       width: 100%;
     }
+  }
+  &-description {
+    grid-column: 6 / 11;
+    text-align: left;
+    font-size: 12px;
+    color: gray;
+    padding-top: 5px;
   }
 }
 </style>

@@ -6,7 +6,7 @@
         {{ value.length }}/{{ maxlength }}
       </p>
     </div>
-    <button v-if="action" :disabled="!active">save</button>
+    <button v-if="action" :disabled="!active" @click="save">save</button>
   </div>
 </template>
 
@@ -46,6 +46,9 @@ export default {
   methods: {
     change (e) {
       this.$emit('input', e.target.value)
+    },
+    save () {
+      this.$emit('save', this.value)
     }
   }
 }

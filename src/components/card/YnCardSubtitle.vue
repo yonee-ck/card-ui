@@ -1,27 +1,25 @@
 <template>
-  <div class="yn-card-score-writer">
-     | {{ writer }}
+  <div class="yn-card-subtitle">
+    {{ subtitle }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'YnCardWriter',
+  name: 'YnCardSubtitle',
   props: {
-    writer: {
+    subtitle: {
       type: String,
-      default: 'Card Writer'
+      default: 'Card Subtitle'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.yn-card-score-writer {
-  grid-column: 6 / 11;
+.yn-card-subtitle {
   text-align: left;
   font-size: 12px;
   color: gray;
-  padding-top: 5px;
 }
 </style>
