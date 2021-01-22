@@ -1,8 +1,8 @@
 <template>
   <div class="yn-textarea" :class="{ btn: action }">
     <div class="yn-textarea-inner" :class="{ disabled: disabled }">
-      <textarea class="yn-textarea-inner-txt" :value="value" :placeholder="placeholder" :maxlength="maxlength" :disabled="disabled" @input="change"></textarea>
-      <p class="yn-textarea-inner-txt-limit">
+      <textarea class="yn-textarea-inner-txt" :value="value" :placeholder="placeholder" :maxlength="maxlength" :disabled="disabled" :readonly="readonly" @input="change"></textarea>
+      <p v-if="!readonly" class="yn-textarea-inner-txt-limit">
         {{ value.length }}/{{ maxlength }}
       </p>
     </div>
@@ -27,6 +27,10 @@ export default {
       default: 500
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
       type: Boolean,
       default: false
     },
