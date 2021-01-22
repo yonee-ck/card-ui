@@ -1,7 +1,7 @@
 {
   "name": "component-ui",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "UI Component",
   "author": "cablekim1204@gmail.com",
   "private": true,
   "scripts": {
@@ -70,6 +70,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not ie <= 8"
+    "not ie <= 10"
   ]
 }
