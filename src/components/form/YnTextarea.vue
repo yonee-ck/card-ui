@@ -3,7 +3,7 @@
     <div class="yn-textarea-inner" :class="{ disabled: disabled }">
       <textarea class="yn-textarea-inner-txt" :value="value" :placeholder="placeholder" :maxlength="maxlength" :disabled="disabled" :readonly="readonly" @input="change"></textarea>
       <p v-if="!readonly" class="yn-textarea-inner-txt-limit">
-        {{ value.length }}/{{ maxlength }}
+        {{ maxlength - value.length }}
       </p>
     </div>
     <button v-if="action" :disabled="!active" @click="save">save</button>
