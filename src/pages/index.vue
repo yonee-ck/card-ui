@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/content">
+    <router-link to="/card">
       <h1>카드 UI</h1>
     </router-link>
     <router-link to="/input">
